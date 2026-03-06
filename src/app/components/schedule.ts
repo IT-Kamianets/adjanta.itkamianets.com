@@ -7,7 +7,7 @@ import { LucideAngularModule, Clock } from 'lucide-angular';
   standalone: true,
   imports: [CommonModule, LucideAngularModule],
   template: `
-    <section id="schedule" class="py-20 relative">
+    <section id="schedule" class="py-20 relative overflow-hidden">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div class="container mx-auto px-6 relative z-10">

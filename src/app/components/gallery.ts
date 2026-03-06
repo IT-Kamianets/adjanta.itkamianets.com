@@ -38,7 +38,7 @@ import { GALLERY_ITEMS } from '../data/content';
     }
   `],
   template: `
-    <section id="gallery" class="py-12 md:py-20 relative overflow-hidden page-enter">
+    <section id="gallery" class="pt-28 pb-12 md:pt-36 md:pb-20 relative overflow-hidden page-enter min-h-screen">
       <!-- Background Elements -->
       <div class="absolute top-1/2 left-0 w-96 h-96 bg-fuchsia-600/10 rounded-full blur-[100px] -translate-y-1/2 -z-10"></div>
       
@@ -162,12 +162,18 @@ export class GalleryComponent implements OnInit {
   openLightbox(index: number) {
     this.currentIndex = index;
     this.lightboxOpen = true;
-    document.body.style.overflow = 'hidden';
+    if (typeof document !== 'undefined') {
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   closeLightbox() {
     this.lightboxOpen = false;
-    document.body.style.overflow = '';
+    if (typeof document !== 'undefined') {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    }
   }
 
   next() {
