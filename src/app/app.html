@@ -2,13 +2,7 @@
   <app-header></app-header>
 
   <main>
-    <app-hero></app-hero>
-    
-    <app-styles [danceStyles]="danceStyles"></app-styles>
-    
-    <app-schedule [schedule]="schedule"></app-schedule>
-    
-    <app-contacts [contacts]="contacts" [danceStyles]="danceStyles"></app-contacts>
+    <router-outlet></router-outlet>
   </main>
 
   <app-footer [contacts]="contacts"></app-footer>
