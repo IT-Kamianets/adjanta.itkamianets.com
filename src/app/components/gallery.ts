@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { GALLERY_ITEMS } from '../data/content';
 
 @Component({
   selector: 'app-gallery',
@@ -37,24 +38,24 @@ import { CommonModule } from '@angular/common';
     }
   `],
   template: `
-    <section id="gallery" class="py-20 relative overflow-hidden page-enter">
+    <section id="gallery" class="py-12 md:py-20 relative overflow-hidden page-enter">
       <!-- Background Elements -->
       <div class="absolute top-1/2 left-0 w-96 h-96 bg-fuchsia-600/10 rounded-full blur-[100px] -translate-y-1/2 -z-10"></div>
       
       <div class="w-full px-4 md:px-8 relative z-10">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-3">
           <div>
-            <h2 class="text-sm font-bold text-cyan-400 uppercase tracking-widest mb-2">Наші моменти</h2>
-            <h3 class="text-4xl font-black">ГАЛЕРЕЯ</h3>
+            <h2 class="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-1">Наші моменти</h2>
+            <h3 class="text-3xl md:text-4xl font-black">ГАЛЕРЕЯ</h3>
           </div>
-          <p class="text-slate-400 max-w-md">
+          <p class="text-slate-400 text-sm md:text-base max-w-md">
             Енергія, емоції та драйв нашого танцювального життя в кожному кадрі.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[250px]">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 auto-rows-[160px] md:auto-rows-[250px]">
           <div *ngFor="let item of galleryItems; let i = index" 
-               class="group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/5 cursor-pointer card-enter {{item.classes}}"
+               class="group relative rounded-2xl md:rounded-3xl overflow-hidden bg-slate-900 border border-white/5 cursor-pointer card-enter {{item.classes}}"
                [style.animation-delay]="(i * 80) + 'ms'"
                (click)="openLightbox(i)">
             
@@ -185,13 +186,5 @@ export class GalleryComponent implements OnInit {
     if (event.key === 'Escape') this.closeLightbox();
   }
 
-  galleryItems = [
-    { title: 'Виступ на фестивалі', category: 'Dance Show', image: 'https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80', classes: 'md:col-span-2 md:row-span-2' },
-    { title: 'Хіп-хоп тренування', category: 'Training', image: 'https://images.unsplash.com/photo-1535525153412-5a42439a610f?auto=format&fit=crop&q=80', classes: 'md:col-span-1 md:row-span-1' },
-    { title: 'Майстер-клас', category: 'Workshop', image: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&q=80', classes: 'md:col-span-1 md:row-span-1' },
-    { title: 'Контемпорарі', category: 'Modern Dance', image: 'https://images.unsplash.com/photo-1518834107812-6afb0d72023a?auto=format&fit=crop&q=80', classes: 'md:col-span-2 md:row-span-1' },
-    { title: 'Відкритий урок', category: 'Event', image: 'https://images.unsplash.com/photo-1508807526345-15e9b5f4ea7c?auto=format&fit=crop&q=80', classes: 'md:col-span-2 md:row-span-1' },
-    { title: 'Брейк-данс батл', category: 'Competition', image: 'https://images.unsplash.com/photo-1565451296685-5eeeb36495be?auto=format&fit=crop&q=80', classes: 'md:col-span-1 md:row-span-1' },
-    { title: 'Стретчінг', category: 'Fitness', image: 'https://images.unsplash.com/photo-1552824375-7bc6eb58e3cb?auto=format&fit=crop&q=80', classes: 'md:col-span-1 md:row-span-1' }
-  ];
+  galleryItems = GALLERY_ITEMS;
 }

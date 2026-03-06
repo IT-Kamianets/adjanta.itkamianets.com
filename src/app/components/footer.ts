@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { LucideAngularModule, Instagram, Facebook, Send, MapPin } from 'lucide-angular';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule],
+  imports: [CommonModule, RouterModule, LucideAngularModule],
   template: `
     <footer class="relative pt-20 pb-10 overflow-hidden border-t border-white/5">
       <!-- Background Decorative Glow -->
@@ -13,10 +14,10 @@ import { LucideAngularModule, Instagram, Facebook, Send, MapPin } from 'lucide-a
       <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-fuchsia-600/10 blur-[100px] rounded-full"></div>
 
       <div class="container mx-auto px-6 relative z-10">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
           
           <!-- Column 1: Brand -->
-          <div class="col-span-1 md:col-span-1">
+          <div class="col-span-2 md:col-span-1">
             <a href="#" class="flex items-center mb-6 group">
               <img src="/logo.png" alt="Adjanta Logo" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-500">
             </a>
@@ -40,9 +41,10 @@ import { LucideAngularModule, Instagram, Facebook, Send, MapPin } from 'lucide-a
           <div>
             <h4 class="text-white font-bold mb-6 tracking-wider uppercase text-sm">Навігація</h4>
             <ul class="space-y-4 text-sm">
-              <li><a href="#styles" class="text-slate-400 hover:text-fuchsia-400 transition-colors">Напрямки танцю</a></li>
-              <li><a href="#schedule" class="text-slate-400 hover:text-fuchsia-400 transition-colors">Розклад занять</a></li>
-              <li><a href="#contacts" class="text-slate-400 hover:text-fuchsia-400 transition-colors">Записатися</a></li>
+              <li><a routerLink="/" fragment="styles" class="text-slate-400 hover:text-fuchsia-400 transition-colors">Напрямки танцю</a></li>
+              <li><a routerLink="/" fragment="schedule" class="text-slate-400 hover:text-fuchsia-400 transition-colors">Розклад занять</a></li>
+              <li><a routerLink="/" fragment="contacts" class="text-slate-400 hover:text-fuchsia-400 transition-colors">Записатися</a></li>
+              <li><a routerLink="/gallery" class="text-slate-400 hover:text-fuchsia-400 transition-colors">Галерея</a></li>
             </ul>
           </div>
 

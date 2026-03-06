@@ -1,3 +1,14 @@
+export const GALLERY_ITEMS = [
+  { title: 'Виступ на фестивалі', category: 'Dance Show', image: '/gallery/1.png', classes: 'md:col-span-2 md:row-span-2' },
+  { title: 'Хіп-хоп тренування', category: 'Training', image: '/gallery/2.png', classes: 'md:col-span-1 md:row-span-1' },
+  { title: 'Майстер-клас', category: 'Workshop', image: '/gallery/3.png', classes: 'md:col-span-1 md:row-span-1' },
+  { title: 'Контемпорарі', category: 'Modern Dance', image: '/gallery/4.png', classes: 'md:col-span-2 md:row-span-1' },
+  { title: 'Відкритий урок', category: 'Event', image: '/gallery/5.png', classes: 'md:col-span-2 md:row-span-1' },
+  { title: 'Брейк-данс батл', category: 'Competition', image: '/gallery/6.png', classes: 'md:col-span-1 md:row-span-1' },
+  { title: 'Стретчінг', category: 'Fitness', image: '/gallery/7.png', classes: 'md:col-span-1 md:row-span-1' },
+  { title: 'Виступ', category: 'Performance', image: '/gallery/8.png', classes: 'md:col-span-1 md:row-span-1' }
+];
+
 export const DANCE_STYLES = [
   {
     id: 'hiphop',
