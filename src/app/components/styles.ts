@@ -21,31 +21,27 @@ import { RevealDirective } from '../directives/reveal.directive';
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           <div
             *ngFor="let style of danceStyles; let i = index"
             appReveal="up" [delay]="i * 100"
-            class="group relative p-8 rounded-3xl bg-white/5 border border-white/5 hover:border-fuchsia-500/30 transition-all duration-300 overflow-hidden"
+            class="group relative p-6 rounded-3xl bg-white/5 border border-white/5 hover:border-fuchsia-500/30 transition-all duration-300 overflow-hidden"
           >
             <!-- Hover Glow -->
             <div class="absolute inset-0 bg-gradient-to-br transition-opacity duration-300 opacity-0 group-hover:opacity-100 {{style.color}}"></div>
 
             <div class="relative z-10">
-              <div class="w-12 h-12 rounded-2xl bg-slate-900 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <lucide-icon [img]="musicIcon" class="w-6 h-6 text-fuchsia-500"></lucide-icon>
+              <div class="w-10 h-10 rounded-xl bg-slate-900 border border-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <lucide-icon [img]="musicIcon" class="w-5 h-5 text-fuchsia-500"></lucide-icon>
               </div>
-              <h4 class="text-2xl font-bold mb-2">{{style.title}}</h4>
-              <div class="flex items-center gap-2 text-cyan-400 text-xs font-bold uppercase mb-4">
+              <h4 class="text-xl font-bold mb-2">{{style.title}}</h4>
+              <div class="flex items-center gap-2 text-cyan-400 text-[10px] font-bold uppercase mb-3">
                 <lucide-icon [img]="usersIcon" class="w-3 h-3"></lucide-icon>
                 {{style.ageGroup}}
               </div>
-              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              <p class="text-slate-400 text-xs leading-relaxed">
                 {{style.description}}
               </p>
-              <button class="text-sm font-bold flex items-center gap-2 text-white group-hover:text-fuchsia-400 transition-colors">
-                Дізнатися більше
-                <lucide-icon [img]="zapIcon" class="w-4 h-4"></lucide-icon>
-              </button>
             </div>
           </div>
         </div>

@@ -63,7 +63,7 @@ import { GALLERY_ITEMS } from '../data/content';
           </h1>
 
           <p class="text-slate-400 text-base lg:text-lg leading-relaxed mb-8 lg:mb-10">
-            Професійне навчання танцям для дітей та підлітків.
+            Професійне навчання танцям для дітей та підлітків (від 3 до 18 років).
             Приєднуйся до спільноти, де творчість зустрічається з дисципліною та стилем.
           </p>
 
@@ -88,6 +88,11 @@ import { GALLERY_ITEMS } from '../data/content';
             <div>
               <div class="text-2xl lg:text-3xl font-black text-white">4</div>
               <div class="text-xs text-slate-500 uppercase tracking-wider mt-0.5">Напрямки</div>
+            </div>
+            <div class="w-px h-8 lg:h-10 bg-white/10"></div>
+            <div>
+              <div class="text-2xl lg:text-3xl font-black text-white">6</div>
+              <div class="text-xs text-slate-500 uppercase tracking-wider mt-0.5">Вікових груп</div>
             </div>
           </div>
         </div>
